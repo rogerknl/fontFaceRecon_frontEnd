@@ -5,13 +5,21 @@ import AppView from '../view/AppView';
 import './AppMain.css';
 
 class AppMain extends Component {
-
+  checkURL(url){
+    console.log(url);
+    fetch(`http://127.0.0.1:3030/getStyles?url=${url}`)
+    .then(response => response.json())
+    .then(styles => console.log(styles));
+  }
   render() {
     return(
       <div className="App-main">
-        <p>Hello from main</p>
         <div className="App-form">
-          <AppForm />
+          <AppForm
+            checkURL={
+              (e)=>{this.checkURL(e)}
+            }
+          />
         </div>
         <div className="App-view">
           <AppView />
