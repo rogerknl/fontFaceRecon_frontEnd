@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import './AppView.css';
 
-class AppMain extends Component {
+class AppView extends Component {
 
   render() {
     return(
@@ -14,4 +14,4 @@ class AppMain extends Component {
   }
 }
 
-export default AppMain;
+export default AppView;
