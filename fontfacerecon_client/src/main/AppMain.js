@@ -9,30 +9,46 @@ class AppMain extends Component {
     super(props);
     this.state = {
       styles: [],
-      error: []
+      error: [],
+      img:'',
+      waiting:false
     }
   }
   checkURL(url){
+    this.setState({
+      img: '',
+      styles : [],
+      error:[],
+      waiting: true
+    });
     fetch(`http://127.0.0.1:3030/getStyles?url=${url}`)
     .then(response => response.json())
     .then(styles => {
       if (styles.errors){
         console.log(styles.errors)
-        this.setState({error: styles.errors});
+        this.setState({
+          error: styles.errors,
+          waiting: false
+        });
       }
       else {
         this.setState({
           img: styles.img,
           styles : styles.styles,
-          error:[]
+          error:[],
+          waiting: false
         });
       }
     });
   }
   render() {
-    let aux, content;
+    let aux, content, waiting;
+    if (this.state.waiting) waiting = (
+      <div className="icon-hourglass">
+        <span role="img" aria-label="Waiting" >🌀</span>
+      </div>);
     //loading img if exist
-    if (this.state.img) aux = <img src={`data:image/jpeg;base64,${this.state.img}`} alt="site"/>
+    if (this.state.img !== '') aux = <img src={`data:image/jpeg;base64,${this.state.img}`} alt="site"/>
 
     //render all fonts if there is no error in fetch
     if ( this.state.error.length === 0 ) {
@@ -71,6 +87,7 @@ class AppMain extends Component {
             }
           />
         </div>
+        {waiting}
         {content}
       </div>
     );
