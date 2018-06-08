@@ -20,14 +20,17 @@ class AppViewFont extends Component {
       fontFamily: this.props.font.fontFamily.replace(/\w*=\w*/g,"").replace(/\s+"/,'"'),
       textDecoration:this.props.font.textDecoration
     };
+    const styleColorDot = {
+      backgroundColor: this.props.font.color,
+      marginLeft: '10px'
+    }
 
     return(
       <div className="App-view-font">
         <p style={styleInline}> {this.props.font.fontFamily.split(',')[0].replace(/\w*=\w*/g,"").replace(/\s+"/,'"').replace(/"/g,'')} {this.props.font.font.split(' ')[4]}</p>
         <p><span className="bold">Font:</span> {this.props.font.font}</p>
-        <p><span className="bold">Color:</span> {this.props.font.color}</p>
+        <p className="colorDescript"><span className="bold">Color: {this.props.font.color}</span>  <span className="dot" style={styleColorDot}></span></p>
         <p><span className="bold">Decoration:</span> {this.props.font.textDecoration}</p>
-        <p><span className="bold">Class:</span> {this.props.font.class}</p>
       </div>
     );
   }
