@@ -11,6 +11,12 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+.App-site-img p{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color:rgb(43,203,121);
+  font-size: 20px;
+}
 .img-remote-site {
   width:100%
 }

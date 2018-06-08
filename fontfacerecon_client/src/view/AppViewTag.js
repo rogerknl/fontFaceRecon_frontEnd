@@ -6,22 +6,22 @@ import './AppViewTag.css';
 class AppViewTag extends Component {
 
   render() {
-    let snf;
-    if ( this.props.fonts.length === 0) snf = 'Selector not found';
-    let keyAux=0;
-    return(
-      <div className="App-view-tag">
-        <h3>{'<'+this.props.tag+'>'}</h3>
-        {snf}
+    let keyAux=0, snf = (<div className="empty-div"></div>);
+    if ( this.props.fonts.length > 0){
+      snf = (
+        <div className="App-view-tag">
         {
           this.props.fonts.map(font =>
           <AppViewFont
             key={this.props.tag + keyAux++}
             font={font}
+            tag={this.props.tag}
           >
           </AppViewFont>)}
       </div>
-    );
+      );
+    }
+    return snf;
   }
 }
 
