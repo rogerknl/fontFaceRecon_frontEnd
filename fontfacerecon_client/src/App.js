@@ -8,7 +8,6 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src="logo.png"  className="App-logo" alt="logo" />
-          <h1 className="App-title">FontFace Recognizer</h1>
         </header>
         <AppMain />
       </div>
