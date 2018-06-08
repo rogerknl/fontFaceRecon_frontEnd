@@ -48,7 +48,7 @@ class AppMain extends Component {
         <span role="img" aria-label="Waiting" >🌀</span>
       </div>);
     //loading img if exist
-    if (this.state.img !== '') aux = <img src={`data:image/jpeg;base64,${this.state.img}`} alt="site"/>
+    if (this.state.img !== '') aux = <img className="img-remote-site" src={`data:image/jpeg;base64,${this.state.img}`} alt="site"/>
 
     //render all fonts if there is no error in fetch
     if ( this.state.error.length === 0 ) {
