@@ -13,7 +13,8 @@ class AppMain extends Component {
       styles: [],
       error: [],
       img:'',
-      waiting:false
+      waiting:false,
+      loaded: false,
     }
   }
   checkURL(url){
@@ -21,7 +22,8 @@ class AppMain extends Component {
       img: '',
       styles : [],
       error:[],
-      waiting: true
+      waiting: true,
+      loaded: false,
     });
     fetch(`http://127.0.0.1:3030/getStyles?url=${url}`)
     .then(response => response.json())
@@ -30,7 +32,8 @@ class AppMain extends Component {
         console.log(styles.errors)
         this.setState({
           error: styles.errors,
-          waiting: false
+          waiting: false,
+          loaded: false,
         });
       }
       else {
@@ -38,7 +41,8 @@ class AppMain extends Component {
           img: styles.img,
           styles : styles.styles,
           error:[],
-          waiting: false
+          waiting: false,
+          loaded: true,
         });
       }
     });
