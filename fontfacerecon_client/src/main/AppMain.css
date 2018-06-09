@@ -5,16 +5,28 @@
   width:80%;
   margin:auto;
 }
-.icon-hourglass {
+/* .icon-hourglass {
   animation-name: rotate;
   animation-duration: 2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-}
+}*/
 .App-site-img p{
   margin-top: 30px;
   margin-bottom: 30px;
   color:rgb(43,203,121);
+  font-size: 20px;
+}
+.App-site-not-loaded {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color:rgb(178,178,178);
+  font-size: 20px;
+}
+.App-site-not-reached{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color:rgba(170, 14, 14, 0.863);
   font-size: 20px;
 }
 .img-remote-site {

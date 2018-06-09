@@ -16,6 +16,8 @@ class AppViewTag extends Component {
             key={this.props.tag + keyAux++}
             font={font}
             tag={this.props.tag}
+            waiting={this.props.waiting}
+            opacity={this.props.opacity}
           >
           </AppViewFont>)}
       </div>

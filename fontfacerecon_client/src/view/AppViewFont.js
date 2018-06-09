@@ -36,12 +36,7 @@ class AppViewFont extends Component {
       </AppViewColor>)
     const dataSource = [{
       key: '1',
-      data: (<span style={styleInline} >
-        {this.props.font.fontFamily.split(',')[0]
-          .replace(/\w*=\w*/g,"")
-          .replace(/\s+"/,'"')
-          .replace(/"/g,'')}
-        {this.props.font.font.split(' ')[4]}</span>),
+      data: (<span style={styleInline}>This is how {this.props.tag} looks like</span>),
     }, {
       key: '2',
       data: `Font: ${this.props.font.font}`,
@@ -62,15 +57,14 @@ class AppViewFont extends Component {
     }];
 
 
-
     return(
       <div className="App-view-font">
-
-        <Table
+        <Table style={{opacity: this.props.opacity}}
           dataSource={dataSource}
           columns={columns}
           bordered={true}
           pagination={false}
+          loading={this.props.waiting}
         />
       </div>
     );
