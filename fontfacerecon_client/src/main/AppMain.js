@@ -42,7 +42,7 @@ class AppMain extends Component {
       waiting: true,
       loaded: false,
     });
-    fetch(`http://192.168.1.245:3030/getStyles?url=${url}`)
+    fetch(`http://51.38.230.154:3030/getStyles?url=${url}`)
     .then(response => response.json())
     .then(styles => {
       if (styles.errors){
