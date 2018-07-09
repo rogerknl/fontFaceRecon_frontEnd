@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-
+import {BACKEND_URL} from '../config.js'
 import AppViewTag from '../view/AppViewTag';
 
 import './AppMain.css';
@@ -42,7 +42,7 @@ class AppMain extends Component {
       waiting: true,
       loaded: false,
     });
-    fetch(`http://51.38.230.154:3030/getStyles?url=${url}`)
+    fetch(`${BACKEND_URL}/getStyles?url=${url}`)
     .then(response => response.json())
     .then(styles => {
       if (styles.errors){
